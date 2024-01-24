@@ -7,31 +7,31 @@ const DropdownMenu = () => {
 
   return (
     <div className="dropdownmenu">
-      <ul className="dropdownmenu__list">
+      <div className="dropdownmenu__list">
         <Link to="" className="dropdownmenu__list-link">
-          <li className="dropdownmenu__list-item">Search</li>
+          <p className="dropdownmenu__list-item">Search</p>
         </Link>
         <Link to="" className="dropdownmenu__list-link">
-          <li li className="dropdownmenu__list-item">
+          <p li className="dropdownmenu__list-item">
             Reading List
-          </li>
+          </p>
         </Link>
         <Link to="" className="dropdownmenu__list-link">
-          <li li className="dropdownmenu__list-item">
+          <p li className="dropdownmenu__list-item">
             Read List
-          </li>
+          </p>
         </Link>
         <Link to="" className="dropdownmenu__list-link">
-          <li li className="dropdownmenu__list-item">
+          <p li className="dropdownmenu__list-item">
             About
-          </li>
+          </p>
         </Link>
-        <li className="dropdownmenu__list-item">
+        <div className="dropdownmenu__list-button-container">
           <button className="dropdownmenu__list-item--button" onClick={logout}>
             Logout
           </button>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   );
 };

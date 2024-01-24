@@ -6,27 +6,43 @@
 .dropdownmenu {
   transition: all linear 0.3s;
   position: absolute;
-  margin-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
 
   &__list-link {
     margin-top: 3rem;
     transition: all linear 0.3s;
     text-align: center;
-
-    :hover {
-      // background: gray;
-      cursor: pointer;
-      // color: #fff;
-    }
   }
 
   &__list-item {
     margin-top: 1rem;
+    margin-right: 2rem;
+    width: 10rem;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  &__list-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-right: 1.7rem;
   }
 
   &__list-item--button {
     border: none;
     background: $booksquirrel-darkblack;
     color: $white;
+
+    :hover {
+      cursor: pointer;
+    }
   }
 }
