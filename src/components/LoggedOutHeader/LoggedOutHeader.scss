@@ -21,6 +21,16 @@
     margin-bottom: 0.5rem;
   }
 
+  &__logo {
+    width: 14rem;
+    // @include padding-headline;
+
+    // @include tablet {
+    //   padding-top: 0;
+    //   padding-bottom: 0;
+    // }
+  }
+
   &__button-container {
     display: flex;
     justify-content: space-between;

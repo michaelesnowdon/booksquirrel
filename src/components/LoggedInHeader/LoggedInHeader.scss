@@ -19,12 +19,18 @@
   &__logo-container {
     display: flex;
     align-items: center;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    // margin-top: 0.5rem;
+    // margin-bottom: 0.5rem;
+  }
+
+  &__logo {
+    width: 14rem;
   }
 
   &__menu-container--dropdown {
     position: relative;
+    margin-top: 0.7rem;
+    margin-right: 1.5rem;
 
     @include tablet {
       display: none;
