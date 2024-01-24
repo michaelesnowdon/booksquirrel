@@ -1,6 +1,8 @@
 import "./LoggedOutHeader.scss";
+import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
 const LoggedOutHeader = () => {
+  const { login, register } = useKindeAuth();
   return (
     <>
       <header className="header-out">
@@ -10,10 +12,14 @@ const LoggedOutHeader = () => {
           </div>
           <div className="header-out__button-container">
             <div className="header-out__buttons">
-              <button className="header-out__button">Sign In</button>
+              <button className="header-out__button" onClick={login}>
+                Sign In
+              </button>
             </div>
             <div className="header-out__buttons">
-              <button className="header-out__button">Sign Up</button>
+              <button className="header-out__button" onClick={register}>
+                Sign Up
+              </button>
             </div>
           </div>
         </div>

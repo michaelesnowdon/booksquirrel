@@ -1,7 +1,10 @@
 import "./DropdownMenu.scss";
 import { Link } from "react-router-dom";
+import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
 const DropdownMenu = () => {
+  const { logout, user, getToken } = useKindeAuth();
+
   return (
     <div className="dropdownmenu">
       <ul className="dropdownmenu__list">
@@ -24,7 +27,9 @@ const DropdownMenu = () => {
           </li>
         </Link>
         <li className="dropdownmenu__list-item">
-          <button className="dropdownmenu__list-item--button">Logout</button>
+          <button className="dropdownmenu__list-item--button" onClick={logout}>
+            Logout
+          </button>
         </li>
       </ul>
     </div>

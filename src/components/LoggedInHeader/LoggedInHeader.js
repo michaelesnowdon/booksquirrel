@@ -1,5 +1,5 @@
 import "./LoggedInHeader.scss";
-import { Link } from "react-router-dom";
+import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import { useState } from "react";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 
@@ -13,6 +13,8 @@ const LoggedInHeader = () => {
   const handleMouseLeave = () => {
     setDropdownVisible(false);
   };
+
+  const { logout, user, getToken } = useKindeAuth();
 
   return (
     <>
@@ -45,7 +47,9 @@ const LoggedInHeader = () => {
               <button className="header-in__button">About</button>
             </div>
             <div className="header-in__buttons">
-              <button className="header-in__button">Logout</button>
+              <button className="header-in__button" onClick={logout}>
+                Logout
+              </button>
             </div>
           </div>
         </div>
