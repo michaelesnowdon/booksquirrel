@@ -1,0 +1,53 @@
+@use "./mixins.scss" as *;
+@use "./typography.scss" as *;
+@use "./variables.scss" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Avenir";
+  color: $booksquirrel-black;
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+button {
+  height: 2.25rem;
+  padding: 0 1rem;
+  border-radius: 1.25rem;
+
+  @include tablet {
+    height: 2.375rem;
+  }
+}
+
+input {
+  height: 2.25rem;
+  padding: 0 1rem;
+  border-radius: 1.25rem;
+
+  @include tablet {
+    height: 2.375rem;
+  }
+}
