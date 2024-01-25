@@ -9,7 +9,7 @@ const LoggedOutHeader = () => {
     <>
       <header className="header-out">
         <div className="header-out__container">
-          <Link to="">
+          <Link to="/">
             <div className="header-out__logo-container">
               <img src={logo} className="header-out__logo"></img>
             </div>

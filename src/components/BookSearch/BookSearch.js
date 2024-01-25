@@ -13,6 +13,8 @@ function BookSearch() {
   const [searchTerm, setSearchTerm] = useState("");
   const [bookList, setBookList] = useState([]);
   const [error, setError] = useState(null);
+  const [inputClass, setInputClass] = useState("booksearch__search-bar");
+  const [isInputEmpty, setIsInputEmpty] = useState(null);
 
   /* THIS IS TO REGISTER USER IN THE DATABASE */
 
@@ -57,54 +59,66 @@ function BookSearch() {
     setSearchType(e.target.value);
   };
 
+  const isFormValid = () => {
+    if (searchTerm.length <= 0) {
+      setInputClass(`booksearch__search-bar booksearch__search-bar--error`);
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission behavior.
 
-    try {
-      const response = await fetchBookInfo(searchTerm, searchType); // Fetch book information from the API.
+    if (isFormValid()) {
+      try {
+        const response = await fetchBookInfo(searchTerm, searchType); // Fetch book information from the API.
 
-      if (response.items && response.items.length > 0) {
-        const filteredBooks = response.items
-          .filter((item) => item.volumeInfo.industryIdentifiers) // Filter out items without industry identifiers.
-          .filter(
-            (item) =>
-              item.volumeInfo.authors &&
-              item.volumeInfo.authors.length === 1 && // Filter out items with multiple authors.
-              item.volumeInfo.imageLinks && // Check if imageLinks property exists.
-              item.volumeInfo.imageLinks.thumbnail // Check if thumbnail property exists.
-          )
-          .filter((item, index, self) => {
-            // Filter books with the same title (case insensitive) and unique titles.
-            const title = item.volumeInfo.title.toLowerCase();
-            return (
-              self.findIndex(
-                (otherItem) =>
-                  otherItem.volumeInfo.title.toLowerCase() === title
-              ) === index
-            );
-          })
-          .map((item) => item.volumeInfo) // Extract the volumeInfo property for each item.
-          .filter((book) =>
-            book.industryIdentifiers.some(
-              (identifier) => identifier.type === "ISBN_13" // Filter books with ISBN-13 identifier.
+        if (response.items && response.items.length > 0) {
+          const filteredBooks = response.items
+            .filter((item) => item.volumeInfo.industryIdentifiers) // Filter out items without industry identifiers.
+            .filter(
+              (item) =>
+                item.volumeInfo.authors &&
+                item.volumeInfo.authors.length === 1 && // Filter out items with multiple authors.
+                item.volumeInfo.imageLinks && // Check if imageLinks property exists.
+                item.volumeInfo.imageLinks.thumbnail // Check if thumbnail property exists.
             )
-          );
+            .filter((item, index, self) => {
+              // Filter books with the same title (case insensitive) and unique titles.
+              const title = item.volumeInfo.title.toLowerCase();
+              return (
+                self.findIndex(
+                  (otherItem) =>
+                    otherItem.volumeInfo.title.toLowerCase() === title
+                ) === index
+              );
+            })
+            .map((item) => item.volumeInfo) // Extract the volumeInfo property for each item.
+            .filter((book) =>
+              book.industryIdentifiers.some(
+                (identifier) => identifier.type === "ISBN_13" // Filter books with ISBN-13 identifier.
+              )
+            );
 
-        setBookList(filteredBooks); // Set the filtered books as the book list.
-        setSearchTerm(" "); // Reset the search term.
-        setError(null); // Clear any previous error message.
-      } else {
-        setBookList([]); // Set an empty book list.
-        setSearchTerm(" "); // Reset the search term.
-        setError("No books found with the given search criteria."); // Set an error message.
+          setBookList(filteredBooks); // Set the filtered books as the book list.
+          setSearchTerm(" "); // Reset the search term.
+          setError(null); // Clear any previous error message.
+          setInputClass("booksearch__search-bar");
+        } else {
+          setBookList([]); // Set an empty book list.
+          setSearchTerm(" "); // Reset the search term.
+          setError("No books found with the given search criteria."); // Set an error message.
+        }
+      } catch (error) {
+        setBookList([]); // Set an empty book list in case of an error.
+        setError("An error occurred while fetching data."); // Set an error message.
+        console.error("Error:", error); // Log the error to the console.
       }
-    } catch (error) {
-      setBookList([]); // Set an empty book list in case of an error.
-      setError("An error occurred while fetching data."); // Set an error message.
-      console.error("Error:", error); // Log the error to the console.
+    } else {
+      setIsInputEmpty(true);
     }
   };
-
   const fetchBookInfo = async (searchTerm, searchType) => {
     const API_KEY = process.env.REACT_APP_GOOGLE_BOOKS_API;
     const maxResults = 15;
@@ -147,10 +161,10 @@ function BookSearch() {
           <div className="booksearch__search">
             <input
               type="text"
-              placeholder="Search"
+              placeholder={isInputEmpty ? `Search cannot be empty` : `Search`}
               value={searchTerm}
               onChange={handleNewSearch}
-              className="booksearch__search-bar"
+              className={inputClass}
             />
             <img
               className="booksearch__search-icon"
