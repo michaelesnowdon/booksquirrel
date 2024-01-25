@@ -1,11 +1,13 @@
 import "./BookSearch.scss";
+import logo from "../../assets/logos/booksquirrel-logo.png";
+import searchIcon from "../../assets/icons/search.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import BookResult from "../BookResult/BookResult";
 import { useState, useEffect } from "react";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
-function BookSearch({ addToReadList }) {
+function BookSearch() {
   const { user, getToken } = useKindeAuth();
   const [searchType, setSearchType] = useState("title");
   const [searchTerm, setSearchTerm] = useState("");
@@ -102,7 +104,6 @@ function BookSearch({ addToReadList }) {
   };
 
   const fetchBookInfo = async (searchTerm, searchType) => {
-    // const API_KEY = "AIzaSyAwPCpNDdDwjl3Lm8P9WwJUpUk8okAV3WY";
     const API_KEY = process.env.REACT_APP_GOOGLE_BOOKS_API;
     const maxResults = 15;
     let apiUrl = "";
@@ -123,36 +124,55 @@ function BookSearch({ addToReadList }) {
   };
 
   return (
-    <div>
-      <h1>Google Books API Search</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
+    <section className="booksearch">
+      <div className="booksearch__container">
+        <div className="booksearch__logo-container">
+          <img src={logo} className="header-out__logo"></img>
+        </div>
+        <form onSubmit={handleSubmit} className="booksearch__form-container">
+          <label className="booksearch__label">
             Search by:
-            <select value={searchType} onChange={handleSearchTypeChange}>
+            <select
+              value={searchType}
+              onChange={handleSearchTypeChange}
+              className="booksearch__drop-down"
+            >
               <option value="title">Title</option>
               <option value="author">Author</option>
             </select>
           </label>
-        </div>
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={handleNewSearch}
-        />
-        <button type="submit">Search</button>
-      </form>
+
+          <div className="booksearch__search">
+            <input
+              type="text"
+              placeholder="Search"
+              value={searchTerm}
+              onChange={handleNewSearch}
+              className="booksearch__search-bar"
+            />
+            <img
+              className="booksearch__search-icon"
+              src={searchIcon}
+              alt=""
+            ></img>
+          </div>
+          <div className="booksearch__button-container">
+            <button className="booksearch__button" type="submit">
+              Search
+            </button>
+          </div>
+        </form>
+      </div>
       {error && <p>{error}</p>}
       {bookList.length > 0 && (
         <div>
-          <h2>Search Results:</h2>
+          <h2 className="booksearch__results"> Results:</h2>
           {bookList.map((book, index) => (
-            <BookResult key={index} book={book} addToReadList={addToReadList} />
+            <BookResult key={index} book={book} />
           ))}
         </div>
       )}
-    </div>
+    </section>
   );
 }
 

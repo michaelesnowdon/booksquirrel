@@ -1,7 +1,7 @@
 import "./BookResult.scss";
 import ImageNotFound from "../../assets/images/image-not-found-icon.svg";
 
-function BookResult({ book, addToReadList }) {
+function BookResult({ book }) {
   // Extract book details to variables
   const { title, authors, categories, description, imageLinks, pageCount } =
     book;
@@ -31,8 +31,8 @@ function BookResult({ book, addToReadList }) {
   // console.log(postPageCount);
 
   return (
-    <div>
-      <h3>Book Title: {title}</h3>
+    <article className="bookresult__card">
+      <h3>{title}</h3>
       <img
         src={imageLinks.thumbnail ? imageLinks.thumbnail : ImageNotFound}
         alt="Book Cover"
@@ -41,8 +41,8 @@ function BookResult({ book, addToReadList }) {
       <p>Category: {categories ? categories.join(", ") : "N/A"}</p>
       <p>Description: {description || "N/A"}</p>
       <p>ISBN-13: {isbn13 ? isbn13.identifier : "N/A"}</p>
-      <button onClick={() => addToReadList(book)}>Add to Reading List</button>
-    </div>
+      <button>Add to Reading List</button>
+    </article>
   );
 }
 
