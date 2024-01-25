@@ -6,6 +6,10 @@
 .booksearch {
   @include margin-layout;
 
+  @include desktop {
+    width: 80%;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -27,15 +31,16 @@
 
   &__drop-down {
     margin: 0.5rem 0 0.5rem 0;
-    border: 2px solid #000000;
+    border: 2px solid $booksquirrel-black;
     border-radius: 0.25rem;
+    font-family: "Avenir";
   }
 
   &__search {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 100%;
+    width: 80%;
 
     &-bar {
       height: 2.25rem;
@@ -45,12 +50,21 @@
       padding: 0.75rem 0.75rem 0.75rem 2.5rem;
       margin-top: 2rem;
       width: 100%;
+      outline: none;
     }
 
     &-icon {
       position: absolute;
       top: 2.5rem;
       left: 0.75rem;
+    }
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include tablet {
+      width: 50%;
     }
   }
 

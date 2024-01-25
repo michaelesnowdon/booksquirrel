@@ -14,6 +14,10 @@
   padding-bottom: 0.5rem;
   border-bottom: solid 2px $mercury;
 
+  // @include desktop {
+  //   width: 70%;
+  // }
+
   &__title {
     @include page-header;
     @include padding-component;
@@ -29,27 +33,35 @@
     @include tablet {
       flex-direction: row;
     }
-  }
 
-  //   &__thumbnail {
-  //   }
+    // @include desktop {
+    //   width: 70%;
+    // }
+  }
 
   &__details-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // width: 80%;
     @include margin-layout;
+
+    @include tablet {
+      width: 70%;
+    }
   }
 
   &__author {
     @include sub-header;
+    text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
 
   &__category {
     @include sub-header;
+    text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
@@ -64,5 +76,21 @@
     width: 10rem;
     background-color: $booksquirrel-orange;
     border: none;
+  }
+
+  &__plus-icon-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  &__plus-icon {
+    color: $booksquirrel-orange;
+    width: 2rem;
   }
 }

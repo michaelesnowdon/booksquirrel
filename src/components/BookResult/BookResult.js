@@ -1,5 +1,6 @@
 import "./BookResult.scss";
 import ImageNotFound from "../../assets/images/image-not-found-icon.svg";
+import Plus from "../../assets/icons/plus.svg";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import axios from "axios";
 import AddBookModal from "../AddBookModal/AddBookModal";
@@ -8,6 +9,7 @@ import { useState } from "react";
 function BookResult({ book }) {
   const { user, getToken } = useKindeAuth();
   const [isOpen, setIsOpen] = useState(false);
+
   // Extract book details to variables
   const { title, authors, categories, description, imageLinks, pageCount } =
     book;
@@ -91,15 +93,21 @@ function BookResult({ book }) {
         </div>
         <div className="bookresult__details-container">
           <p className="bookresult__author">
-            Author: {authors ? authors.join(", ") : "N/A"}
+            Author: {authors ? authors.join(", ") : "Not Available"}
           </p>
           <p className="bookresult__category">
-            Category: {categories ? categories.join(", ") : "N/A"}
+            Category: {categories ? categories.join(", ") : "Not Available"}
           </p>
-          <p className="bookresult__description">{description || "N/A"}</p>
-          <button className="bookresult__button" onClick={clickAdd}>
-            Add to Reading List
-          </button>
+          <p className="bookresult__description">
+            {description || "Not Available"}
+          </p>
+          <div className="bookresult__plus-icon-container">
+            <img
+              className="bookresult__plus-icon"
+              src={Plus}
+              onClick={clickAdd}
+            ></img>
+          </div>
         </div>
       </div>
     </article>
