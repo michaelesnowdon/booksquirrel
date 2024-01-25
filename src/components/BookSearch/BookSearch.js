@@ -16,6 +16,8 @@ function BookSearch() {
 
   /* THIS IS TO REGISTER USER IN THE DATABASE */
 
+  //   console.log(user);
+
   const userId = user.id;
   const firstName = user.given_name;
   const lastName = user.family_name;

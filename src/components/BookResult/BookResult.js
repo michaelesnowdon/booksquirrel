@@ -31,17 +31,27 @@ function BookResult({ book }) {
   // console.log(postPageCount);
 
   return (
-    <article className="bookresult__card">
-      <h3>{title}</h3>
-      <img
-        src={imageLinks.thumbnail ? imageLinks.thumbnail : ImageNotFound}
-        alt="Book Cover"
-      />
-      <p>Author: {authors ? authors.join(", ") : "N/A"}</p>
-      <p>Category: {categories ? categories.join(", ") : "N/A"}</p>
-      <p>Description: {description || "N/A"}</p>
-      <p>ISBN-13: {isbn13 ? isbn13.identifier : "N/A"}</p>
-      <button>Add to Reading List</button>
+    <article className="bookresult">
+      <h3 className="bookresult__title">{title}</h3>
+      <div className="bookresult__container">
+        <div className="bookresult__image-container">
+          <img
+            src={imageLinks.thumbnail ? imageLinks.thumbnail : ImageNotFound}
+            alt="Book Cover"
+            className="bookresult__thumbnail"
+          />
+        </div>
+        <div className="bookresult__details-container">
+          <p className="bookresult__author">
+            Author: {authors ? authors.join(", ") : "N/A"}
+          </p>
+          <p className="bookresult__category">
+            Category: {categories ? categories.join(", ") : "N/A"}
+          </p>
+          <p className="bookresult__description">{description || "N/A"}</p>
+          <button className="bookresult__button">Add to Reading List</button>
+        </div>
+      </div>
     </article>
   );
 }
