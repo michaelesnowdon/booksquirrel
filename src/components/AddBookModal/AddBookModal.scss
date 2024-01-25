@@ -1,0 +1,172 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.modal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  &__container {
+    width: 100%;
+  }
+
+  @include tablet {
+    align-items: center;
+    align-items: flex-start;
+  }
+
+  &__title {
+    @include page-header;
+  }
+
+  &__icon-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    width: auto;
+    height: auto;
+  }
+
+  &__icon-button {
+    background-image: url(../../assets/icons/close-24px.svg);
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: 5px right right;
+    height: 20px;
+    width: 20px;
+    background-color: $white;
+    border: none;
+    padding: 0;
+  }
+
+  &__text-container {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+  }
+
+  &__title-container {
+    margin-bottom: 1.5rem;
+  }
+
+  &__buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include tablet {
+      width: 16.207rem;
+    }
+
+    @include desktop {
+      justify-content: flex-end;
+    }
+  }
+
+  &__buttons-large-container {
+    @include tablet {
+      display: flex;
+      justify-content: flex-end;
+      width: 97%;
+    }
+
+    @include desktop {
+      width: 97%;
+    }
+  }
+
+  &__cancel-button-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    :hover {
+      border-color: $booksquirrel-orange;
+    }
+  }
+
+  &__cancel-button {
+    width: 80%;
+    height: 2.25rem;
+    border-radius: 5rem;
+    color: $booksquirrel-orange;
+    border: 1.25px solid $booksquirrel-orange;
+    background-color: $white;
+  }
+
+  &__delete-button-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    :hover {
+      background-color: $booksquirrel-darkorange;
+    }
+  }
+
+  &__delete-button {
+    width: 80%;
+    height: 2.25rem;
+    border-radius: 5rem;
+    border: none;
+    background-color: $booksquirrel-orange;
+    color: $white;
+  }
+}
+
+.ReactModal__Content--open {
+  width: 100%;
+  inset: 0;
+
+  @include tablet {
+    inset: 40px;
+    width: 90%;
+  }
+}
+
+.ReactModal__Content {
+  width: 100%;
+  inset: 0 !important;
+
+  @include tablet {
+    inset: 140px 5% 40px 5% !important;
+    width: 90%;
+    height: 30%;
+  }
+
+  @include desktop {
+    inset: 140px 20% 40px 5% !important;
+    width: 60%;
+    height: 40%;
+    padding-bottom: 3rem;
+  }
+}
+
+.ReactModal__Content--after-open {
+  width: 100%;
+  inset: 0;
+  position: relative;
+
+  @include tablet {
+    inset: 40px;
+    width: 90%;
+  }
+
+  @include desktop {
+    inset: 140px 20% 40px 20% !important;
+    width: 60%;
+    height: 30%;
+  }
+}
+
+.ReactModal__Overlay {
+  background-color: #13182cc8 !important;
+}

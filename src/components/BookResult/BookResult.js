@@ -2,9 +2,12 @@ import "./BookResult.scss";
 import ImageNotFound from "../../assets/images/image-not-found-icon.svg";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import axios from "axios";
+import AddBookModal from "../AddBookModal/AddBookModal";
+import { useState } from "react";
 
 function BookResult({ book }) {
   const { user, getToken } = useKindeAuth();
+  const [isOpen, setIsOpen] = useState(false);
   // Extract book details to variables
   const { title, authors, categories, description, imageLinks, pageCount } =
     book;
@@ -55,13 +58,28 @@ function BookResult({ book }) {
   const handleAddBook = async () => {
     try {
       await AddABookToReadList();
+      setIsOpen(false);
+      window.location.reload();
     } catch (error) {
       console.error(error);
     }
   };
 
+  const clickAdd = () => {
+    setIsOpen(true);
+  };
+
+  const handleModalCancel = () => {
+    setIsOpen(false);
+  };
+
   return (
     <article className="bookresult">
+      <AddBookModal
+        isOpen={isOpen}
+        handleModalCancel={handleModalCancel}
+        handleAddBook={handleAddBook}
+      />
       <h3 className="bookresult__title">{title}</h3>
       <div className="bookresult__container">
         <div className="bookresult__image-container">
@@ -79,7 +97,7 @@ function BookResult({ book }) {
             Category: {categories ? categories.join(", ") : "N/A"}
           </p>
           <p className="bookresult__description">{description || "N/A"}</p>
-          <button className="bookresult__button" onClick={handleAddBook}>
+          <button className="bookresult__button" onClick={clickAdd}>
             Add to Reading List
           </button>
         </div>
