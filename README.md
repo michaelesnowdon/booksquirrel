@@ -35,6 +35,7 @@ In today's fast-paced digital age, individuals are constantly seeking efficient 
 - JavaScript
 - Supabase
 - Express
+- Kinde Auth
 - Client libraries:
   - react
   - react-router
@@ -79,6 +80,10 @@ Google Books API
 #### Book Discussion Page
 
 ![](book-discussion.png)
+
+#### Delete Modal
+
+![](delete-modal.png)
 
 ### Data
 
