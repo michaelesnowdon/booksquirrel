@@ -39,7 +39,7 @@ const LoggedInHeader = () => {
           </div>
           <div className="header-in__button-container--tablet">
             <div className="header-in__buttons">
-              <button className="header-out__button">Search</button>
+              <button className="header-in__button">Search</button>
             </div>
             <div className="header-in__buttons">
               <button className="header-in__button">Reading List</button>

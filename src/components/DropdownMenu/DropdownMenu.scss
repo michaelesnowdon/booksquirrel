@@ -16,6 +16,11 @@
     margin-top: 3rem;
     transition: all linear 0.3s;
     text-align: center;
+
+    :hover {
+      cursor: pointer;
+      font-weight: 600;
+    }
   }
 
   &__list-item {

@@ -11,8 +11,8 @@
     display: flex;
     justify-content: space-between;
     @include margin-layout;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    // margin-top: 0.5rem;
+    // margin-bottom: 0.5rem;
     border-bottom: solid 3px $booksquirrel-orange;
   }
 
@@ -43,6 +43,7 @@
 
     :hover {
       background-color: $booksquirrel-darkorange;
+      color: $white;
     }
   }
 
@@ -62,12 +63,14 @@
     :hover {
       background-color: $booksquirrel-darkorange;
       cursor: pointer;
+      color: $white;
     }
   }
 
   &__button {
     background-color: $booksquirrel-orange;
     border: none;
+    font-weight: 600;
 
     :hover {
       background-color: $booksquirrel-darkorange;
