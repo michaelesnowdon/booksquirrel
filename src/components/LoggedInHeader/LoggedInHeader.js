@@ -38,12 +38,16 @@ const LoggedInHeader = () => {
             </div>
           </div>
           <div className="header-in__button-container--tablet">
-            <div className="header-in__buttons">
-              <button className="header-in__button">Search</button>
-            </div>
-            <div className="header-in__buttons">
-              <button className="header-in__button">Reading List</button>
-            </div>
+            <Link to="/">
+              <div className="header-in__buttons">
+                <button className="header-in__button">Search</button>
+              </div>
+            </Link>
+            <Link to="/read-list">
+              <div className="header-in__buttons">
+                <button className="header-in__button">Reading List</button>
+              </div>
+            </Link>
             <div className="header-in__buttons">
               <button className="header-in__button">Read List</button>
             </div>

@@ -5,6 +5,7 @@ import LoggedInHeader from "./components/LoggedInHeader/LoggedInHeader";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BookSearch from "./components/BookSearch/BookSearch";
 import Login from "./components/Login/Login";
+import ReadList from "./pages/ReadList/ReadList";
 
 function App() {
   const { isLoading, isAuthenticated } = useKindeAuth();
@@ -17,6 +18,10 @@ function App() {
           <Route
             path="/"
             element={isAuthenticated ? <BookSearch /> : <Login />}
+          ></Route>
+          <Route
+            path="/read-list"
+            element={isAuthenticated ? <ReadList /> : <Login />}
           ></Route>
         </Routes>
       </BrowserRouter>
