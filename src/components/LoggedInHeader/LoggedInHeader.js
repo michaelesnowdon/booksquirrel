@@ -32,10 +32,8 @@ const LoggedInHeader = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <div>
-              <button className="header-in__button">Menu</button>
-              {isDropdownVisible && <DropdownMenu />}
-            </div>
+            <button className="header-in__button">Menu</button>
+            {isDropdownVisible && <DropdownMenu />}
           </div>
           <div className="header-in__button-container--tablet">
             <Link to="/">

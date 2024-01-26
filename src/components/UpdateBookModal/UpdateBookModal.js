@@ -1,10 +1,10 @@
-import "./DeleteBookModal.scss";
+import "./UpdateBookModal.scss";
 import ReactModal from "react-modal";
 
-const DeleteBookModal = ({
+const UpdateBookModal = ({
   isOpen,
-  handleModalCancelDelete,
-  handleDeleteBook,
+  handleModalCancelUpdate,
+  handleUpdateBook,
 }) => {
   return (
     <>
@@ -14,17 +14,17 @@ const DeleteBookModal = ({
             <div className="modal__icon-button-container">
               <button
                 className="modal__icon-button"
-                onClick={handleModalCancelDelete}
+                onClick={handleModalCancelUpdate}
               ></button>
             </div>
             <div className="modal__text-container">
               <div className="modal__title-container">
-                <h1 className="modal__title">{`Delete book from reading list?`}</h1>
+                <h1 className="modal__title">{`Mark book as read?`}</h1>
               </div>
               <div className="modal__description-container">
                 <p className="modal__description">
                   {`
-                  Please confirm that you would like to delete this book from your reading list?`}
+                  Please confirm that you would like to mark this book as read`}
                 </p>
               </div>
             </div>
@@ -34,7 +34,7 @@ const DeleteBookModal = ({
               <div className="modal__cancel-button-container">
                 <button
                   className="modal__cancel-button"
-                  onClick={handleModalCancelDelete}
+                  onClick={handleModalCancelUpdate}
                 >
                   Cancel
                 </button>
@@ -42,9 +42,9 @@ const DeleteBookModal = ({
               <div className="modal__delete-button-container">
                 <button
                   className="modal__delete-button"
-                  onClick={handleDeleteBook}
+                  onClick={handleUpdateBook}
                 >
-                  Delete Book
+                  Mark book as read
                 </button>
               </div>
             </div>
@@ -55,4 +55,4 @@ const DeleteBookModal = ({
   );
 };
 
-export default DeleteBookModal;
+export default UpdateBookModal;

@@ -8,14 +8,20 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 5rem;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 7rem;
+  // background-color: $booksquirrel-orange;
+  border-radius: 5px;
+  margin-top: 0.3rem;
 
   &__list-link {
-    margin-top: 3rem;
+    margin-right: 0.3rem;
     transition: all linear 0.3s;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     :hover {
       cursor: pointer;
@@ -25,7 +31,6 @@
 
   &__list-item {
     margin-top: 0.8rem;
-    margin-right: 2rem;
     width: 10rem;
 
     :hover {
@@ -38,7 +43,8 @@
     justify-content: center;
     align-items: center;
     margin-top: 0.5rem;
-    margin-right: 1.7rem;
+    margin-right: 0.2rem;
+    margin-bottom: 0.5rem;
 
     :hover {
       cursor: pointer;

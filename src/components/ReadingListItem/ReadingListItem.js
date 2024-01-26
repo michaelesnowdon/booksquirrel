@@ -8,13 +8,18 @@ import { useState } from "react";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import axios from "axios";
 import DeleteBookModal from "../DeleteBookModal/DeleteBookModal";
+import UpdateBookModal from "../UpdateBookModal/UpdateBookModal";
+import { Link } from "react-router-dom";
 
 const ReadingListItem = ({ book, fetchReadingList }) => {
   const { user, getToken } = useKindeAuth();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const [isUpdateOpen, setIsUpdateOpen] = useState(false);
 
   const userId = user.id;
   const bookId = book.book.isbn;
+
+  /* Delete a book for a user */
 
   const deleteBook = async () => {
     try {
@@ -36,7 +41,7 @@ const ReadingListItem = ({ book, fetchReadingList }) => {
   const handleDeleteBook = async () => {
     try {
       await deleteBook();
-      setIsOpen(false);
+      setIsDeleteOpen(false);
       fetchReadingList();
     } catch (error) {
       console.error(error);
@@ -44,20 +49,63 @@ const ReadingListItem = ({ book, fetchReadingList }) => {
   };
 
   const clickDelete = () => {
-    setIsOpen(true);
+    setIsDeleteOpen(true);
   };
 
-  const handleModalCancel = () => {
-    setIsOpen(false);
+  const handleModalCancelDelete = () => {
+    setIsDeleteOpen(false);
+  };
+
+  /* Update a book for a user */
+
+  const updateBook = async () => {
+    try {
+      const accessToken = await getToken();
+      const response = await axios.put(
+        `http://localhost:8080/api/books/${userId}/update/${bookId}`,
+        { isRead: true },
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      fetchReadingList();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleUpdateBook = async () => {
+    try {
+      await updateBook();
+      setIsUpdateOpen(false);
+      fetchReadingList();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const clickUpdate = () => {
+    setIsUpdateOpen(true);
+  };
+
+  const handleModalCancelUpdate = () => {
+    setIsUpdateOpen(false);
   };
 
   return (
     <>
       <article className="readinglist-item">
         <DeleteBookModal
-          isOpen={isOpen}
-          handleModalCancel={handleModalCancel}
+          isOpen={isDeleteOpen}
+          handleModalCancelDelete={handleModalCancelDelete}
           handleDeleteBook={handleDeleteBook}
+        />
+        <UpdateBookModal
+          isOpen={isUpdateOpen}
+          handleModalCancelUpdate={handleModalCancelUpdate}
+          handleUpdateBook={handleUpdateBook}
         />
         <h3 className="readinglist-item__title">{book.book.title}</h3>
         <div className="readinglist-item__container">
@@ -80,7 +128,11 @@ const ReadingListItem = ({ book, fetchReadingList }) => {
             ).fromNow()}`}</p>
             <div className="readinglist-item__icon-container">
               <div className="readinglist-item__plus-icon-container">
-                <img className="readinglist-item__plus-icon" src={Tick}></img>
+                <img
+                  className="readinglist-item__plus-icon"
+                  src={Tick}
+                  onClick={clickUpdate}
+                ></img>
               </div>
               <div className="readinglist-item__delete-icon-container">
                 <img

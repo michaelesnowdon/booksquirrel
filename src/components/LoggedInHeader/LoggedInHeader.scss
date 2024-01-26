@@ -30,7 +30,8 @@
   &__menu-container--dropdown {
     position: relative;
     margin-top: 0.7rem;
-    margin-right: 1.5rem;
+    // margin-right: 3rem;
+    // width: 6rem;
 
     @include tablet {
       display: none;
