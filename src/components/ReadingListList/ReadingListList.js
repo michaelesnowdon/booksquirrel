@@ -46,7 +46,13 @@ const ReadingListList = () => {
           readingList
             .sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate))
             .map((book) => {
-              return <ReadingListItem key={book.id} book={book} />;
+              return (
+                <ReadingListItem
+                  key={book.book.isbn}
+                  book={book}
+                  fetchReadingList={fetchReadingList}
+                />
+              );
             })
         ) : (
           <>

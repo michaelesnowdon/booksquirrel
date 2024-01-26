@@ -79,10 +79,14 @@
     border: none;
   }
 
+  &__icon-container {
+    display: flex;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
   &__plus-icon-container {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
     width: 100%;
 
     :hover {
@@ -91,6 +95,34 @@
   }
 
   &__plus-icon {
+    color: $booksquirrel-orange;
+    width: 2rem;
+  }
+
+  &__delete-icon-container {
+    display: flex;
+    width: 100%;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  &__delete-icon {
+    color: $booksquirrel-orange;
+    width: 2rem;
+  }
+
+  &__discussion-icon-container {
+    display: flex;
+    width: 100%;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  &__discussion-icon {
     color: $booksquirrel-orange;
     width: 2rem;
   }
