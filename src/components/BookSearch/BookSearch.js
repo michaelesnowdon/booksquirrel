@@ -143,7 +143,7 @@ function BookSearch() {
     <section className="booksearch">
       <div className="booksearch__container">
         <div className="booksearch__logo-container">
-          <img src={logo} className="header-out__logo"></img>
+          <img src={logo} className="booksearch__logo"></img>
         </div>
         <form onSubmit={handleSubmit} className="booksearch__form-container">
           <label className="booksearch__label">

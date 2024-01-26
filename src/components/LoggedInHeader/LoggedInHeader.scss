@@ -24,14 +24,14 @@
   }
 
   &__logo {
-    width: 14rem;
+    width: 12rem;
   }
 
   &__menu-container--dropdown {
     position: relative;
     margin-top: 0.7rem;
     // margin-right: 3rem;
-    // width: 6rem;
+    width: 6rem;
 
     @include tablet {
       display: none;
@@ -41,6 +41,17 @@
   &__button {
     background-color: $booksquirrel-orange;
     border: none;
+
+    :hover {
+      background-color: $booksquirrel-darkorange;
+      color: $white;
+    }
+  }
+
+  &__button--dropdown {
+    background-color: $booksquirrel-orange;
+    border: none;
+    margin-left: 2rem;
 
     :hover {
       background-color: $booksquirrel-darkorange;
