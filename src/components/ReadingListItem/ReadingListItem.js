@@ -1,6 +1,7 @@
 import "./ReadingListItem.scss";
 import ImageNotFound from "../../assets/images/image-not-found-icon.svg";
 import Tick from "../../assets/icons/tick.svg";
+import moment from "moment";
 
 const ReadingListItem = ({ book }) => {
   return (
@@ -22,6 +23,9 @@ const ReadingListItem = ({ book }) => {
             <p className="readinglist-item__category">
               Category: {book.book.category}
             </p>
+            <p className="readinglist-item__date">{`Added ${moment(
+              book.addedDate
+            ).fromNow()}`}</p>
             <div className="readinglist-item__plus-icon-container">
               <img className="readinglist-item__plus-icon" src={Tick}></img>
             </div>

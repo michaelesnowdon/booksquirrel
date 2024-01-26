@@ -19,7 +19,7 @@
   // }
 
   &__title {
-    @include page-header;
+    @include sub-header;
     @include padding-component;
     text-align: center;
   }
@@ -53,16 +53,23 @@
   }
 
   &__author {
-    @include sub-header;
+    @include body-copy;
     text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
 
   &__category {
-    @include sub-header;
+    @include body-copy;
     text-align: center;
-    margin-top: 0.5rem;
+    // margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__date {
+    @include body-copy;
+    text-align: center;
+    // margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
 
