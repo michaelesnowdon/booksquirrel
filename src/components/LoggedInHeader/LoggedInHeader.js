@@ -16,7 +16,7 @@ const LoggedInHeader = () => {
     setDropdownVisible(false);
   };
 
-  const { logout, user, getToken } = useKindeAuth();
+  const { logout } = useKindeAuth();
 
   return (
     <>
@@ -43,7 +43,7 @@ const LoggedInHeader = () => {
                 <button className="header-in__button">Search</button>
               </div>
             </Link>
-            <Link to="/read-list">
+            <Link to="/reading-list">
               <div className="header-in__buttons">
                 <button className="header-in__button">Reading List</button>
               </div>

@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
 const DropdownMenu = () => {
-  const { logout, user, getToken } = useKindeAuth();
+  const { logout } = useKindeAuth();
 
   return (
     <div className="dropdownmenu">
       <div className="dropdownmenu__list">
-        <Link to="" className="dropdownmenu__list-link">
+        <Link to="/" className="dropdownmenu__list-link">
           <p className="dropdownmenu__list-item">Search</p>
         </Link>
-        <Link to="" className="dropdownmenu__list-link">
+        <Link to="reading-list" className="dropdownmenu__list-link">
           <p li className="dropdownmenu__list-item">
             Reading List
           </p>

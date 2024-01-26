@@ -5,10 +5,10 @@ import LoggedInHeader from "./components/LoggedInHeader/LoggedInHeader";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BookSearch from "./components/BookSearch/BookSearch";
 import Login from "./components/Login/Login";
-import ReadList from "./pages/ReadList/ReadList";
+import ReadingList from "./pages/ReadingList/ReadingList";
 
 function App() {
-  const { isLoading, isAuthenticated } = useKindeAuth();
+  const { isAuthenticated } = useKindeAuth();
 
   return (
     <div className="App">
@@ -20,8 +20,8 @@ function App() {
             element={isAuthenticated ? <BookSearch /> : <Login />}
           ></Route>
           <Route
-            path="/read-list"
-            element={isAuthenticated ? <ReadList /> : <Login />}
+            path="/reading-list"
+            element={isAuthenticated ? <ReadingList /> : <Login />}
           ></Route>
         </Routes>
       </BrowserRouter>
