@@ -1,4 +1,5 @@
 import "./ReadingListList.scss";
+import ReadingListItem from "../ReadingListItem/ReadingListItem";
 import { useState, useEffect } from "react";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import axios from "axios";
@@ -34,7 +35,14 @@ const ReadingListList = () => {
 
   return (
     <>
-      <h1>Your Reading List</h1>
+      <h1>Your Reading List:</h1>
+      <section>
+        {readingList
+          .sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate))
+          .map((book) => {
+            return <ReadingListItem key={book.id} book={book} />;
+          })}
+      </section>
     </>
   );
 };
