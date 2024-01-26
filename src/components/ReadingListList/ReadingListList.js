@@ -35,13 +35,20 @@ const ReadingListList = () => {
 
   return (
     <>
-      <h1>Your Reading List:</h1>
-      <section>
-        {readingList
-          .sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate))
-          .map((book) => {
-            return <ReadingListItem key={book.id} book={book} />;
-          })}
+      <section className="readinglist">
+        <h1 className="readinglist__title">Your Reading List:</h1>
+        <h2>{`${user.given_name} you have ${readingList.length} ${
+          readingList.length === 1 ? "book" : "books"
+        } on your reading list`}</h2>
+        {readingList.length > 0 ? (
+          readingList
+            .sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate))
+            .map((book) => {
+              return <ReadingListItem key={book.id} book={book} />;
+            })
+        ) : (
+          <p>You currently have no books on your reading list</p>
+        )}
       </section>
     </>
   );
