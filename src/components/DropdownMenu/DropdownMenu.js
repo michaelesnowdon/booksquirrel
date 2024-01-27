@@ -16,7 +16,7 @@ const DropdownMenu = () => {
             Reading List
           </p>
         </Link>
-        <Link to="" className="dropdownmenu__list-link">
+        <Link to="read-list" className="dropdownmenu__list-link">
           <p li className="dropdownmenu__list-item">
             Read List
           </p>

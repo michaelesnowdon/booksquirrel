@@ -24,7 +24,11 @@ const LoggedInHeader = () => {
         <div className="header-in__container">
           <Link to="/">
             <div className="header-in__logo-container">
-              <img src={logo} className="header-out__logo"></img>
+              <img
+                src={logo}
+                className="header-out__logo"
+                alt="booksquirrel-logo"
+              ></img>
             </div>
           </Link>
           <div
@@ -46,9 +50,11 @@ const LoggedInHeader = () => {
                 <button className="header-in__button">Reading List</button>
               </div>
             </Link>
-            <div className="header-in__buttons">
-              <button className="header-in__button">Read List</button>
-            </div>
+            <Link to="/read-list">
+              <div className="header-in__buttons">
+                <button className="header-in__button">Read List</button>
+              </div>
+            </Link>
             <div className="header-in__buttons">
               <button className="header-in__button">About</button>
             </div>

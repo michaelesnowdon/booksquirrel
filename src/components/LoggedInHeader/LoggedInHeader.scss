@@ -67,7 +67,7 @@
     @include tablet {
       display: flex;
       justify-content: space-between;
-      width: 30rem;
+      width: 31rem;
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
     }
@@ -85,9 +85,5 @@
     background-color: $booksquirrel-orange;
     border: none;
     // font-weight: 600;
-
-    :hover {
-      background-color: $booksquirrel-darkorange;
-    }
   }
 }

@@ -1,0 +1,52 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.readlist {
+  @include margin-layout;
+
+  &__header {
+    @include page-header;
+    text-align: center;
+  }
+
+  &__no-books-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__no-books-header {
+    @include body-copy;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  &__no-books-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__no-books-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+    :hover {
+      background-color: $booksquirrel-darkorange;
+      color: $white;
+    }
+  }
+
+  &__no-books-button {
+    text-align: center;
+    background-color: $booksquirrel-orange;
+    border: none;
+  }
+}

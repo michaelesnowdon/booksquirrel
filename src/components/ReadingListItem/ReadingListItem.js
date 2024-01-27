@@ -132,6 +132,7 @@ const ReadingListItem = ({ book, fetchReadingList }) => {
                   className="readinglist-item__plus-icon"
                   src={Tick}
                   onClick={clickUpdate}
+                  alt="plus-icon"
                 ></img>
               </div>
               <div className="readinglist-item__delete-icon-container">
@@ -139,12 +140,14 @@ const ReadingListItem = ({ book, fetchReadingList }) => {
                   className="readinglist-item__delete-icon"
                   src={Delete}
                   onClick={clickDelete}
+                  alt="delete-icon"
                 ></img>
               </div>
               <div className="readinglist-item__discussion-icon-container">
                 <img
                   className="readinglist-item__discussion-icon"
                   src={Discussion}
+                  alt="discussion-icon"
                 ></img>
               </div>
             </div>
