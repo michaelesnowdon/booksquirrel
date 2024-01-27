@@ -2,3 +2,44 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/global" as *;
+
+.login {
+  @include margin-layout;
+  //   width: 100%;
+
+  @include desktop {
+    width: 80%;
+  }
+
+  &__logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo {
+    width: 18rem;
+  }
+
+  &__slogan {
+    // @include sub-header;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 700;
+    color: $booksquirrel-orange;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $booksquirrel-orange;
+    border: none;
+  }
+}

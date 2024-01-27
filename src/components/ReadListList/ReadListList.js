@@ -32,6 +32,8 @@ const ReadListList = () => {
     fetchReadList();
   }, []);
 
+  /* Function to count total books pages */
+
   function calculateTotalPages(books) {
     const totalPages = books.reduce((total, book) => {
       if (typeof book.book.pageCount === "number") {
@@ -45,14 +47,33 @@ const ReadListList = () => {
 
   const pageCount = calculateTotalPages(readList);
 
+  /* Function to count book categories */
+
+  function countUniqueCategories(books) {
+    const uniqueCategories = new Set();
+
+    books.forEach((book) => {
+      if (book.book.category) {
+        uniqueCategories.add(book.book.category);
+      }
+    });
+
+    return uniqueCategories.size;
+  }
+
+  const categoriesCount = countUniqueCategories(readList);
+
   return (
     <>
       <section className="readlist">
         <h2 className="readlist__header">{`${user.given_name} you have read ${
           readList.length
-        } ${
-          readList.length === 1 ? "book" : "books"
-        }! That is ${pageCount} pages.`}</h2>
+        } ${readList.length === 1 ? "book" : "books"}!`}</h2>{" "}
+        <h2 className="readlist__subheader">
+          {`That is ${pageCount} pages and ${categoriesCount} unique book ${
+            categoriesCount === 1 ? "category" : "categories"
+          }.`}
+        </h2>
         {readList.length > 0 ? (
           readList
             .sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate))

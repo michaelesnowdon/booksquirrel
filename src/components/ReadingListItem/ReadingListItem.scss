@@ -16,7 +16,7 @@
   width: 100%;
 
   &__title {
-    @include sub-header;
+    // @include sub-header;
     @include padding-component;
     text-align: center;
   }

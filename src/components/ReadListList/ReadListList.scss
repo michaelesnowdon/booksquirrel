@@ -5,10 +5,23 @@
 
 .readlist {
   @include margin-layout;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   &__header {
     @include page-header;
     text-align: center;
+    width: 90%;
+  }
+
+  &__subheader {
+    @include sub-header;
+    text-align: center;
+    width: 90%;
+    margin-top: 1rem;
+    font-style: italic;
   }
 
   &__no-books-container {
