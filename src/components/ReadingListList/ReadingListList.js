@@ -32,8 +32,6 @@ const ReadingListList = () => {
     fetchReadingList();
   }, []);
 
-  console.log(readingList);
-
   return (
     <>
       <section className="readinglist">

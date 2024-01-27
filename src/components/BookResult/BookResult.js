@@ -5,10 +5,12 @@ import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import axios from "axios";
 import AddBookModal from "../AddBookModal/AddBookModal";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function BookResult({ book }) {
   const { user, getToken } = useKindeAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Extract book details to variables
   const { title, authors, categories, description, imageLinks, pageCount } =
@@ -61,7 +63,8 @@ function BookResult({ book }) {
     try {
       await AddABookToReadList();
       setIsOpen(false);
-      window.location.reload();
+      // window.location.reload();
+      navigate("/reading-list");
     } catch (error) {
       console.error(error);
     }

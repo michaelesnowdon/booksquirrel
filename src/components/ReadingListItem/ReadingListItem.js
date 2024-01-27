@@ -2,7 +2,7 @@ import "./ReadingListItem.scss";
 import ImageNotFound from "../../assets/images/image-not-found-icon.svg";
 import Tick from "../../assets/icons/tick.svg";
 import Delete from "../../assets/icons/delete_outline-24px.svg";
-import Discussion from "../../assets/icons/discussion.svg";
+import Discussion from "../../assets/icons/comment2.svg";
 import moment from "moment";
 import { useState } from "react";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
@@ -127,9 +127,9 @@ const ReadingListItem = ({ book, fetchReadingList }) => {
               book.addedDate
             ).fromNow()}`}</p>
             <div className="readinglist-item__icon-container">
-              <div className="readinglist-item__plus-icon-container">
+              <div className="readinglist-item__tick-icon-container">
                 <img
-                  className="readinglist-item__plus-icon"
+                  className="readinglist-item__tick-icon"
                   src={Tick}
                   onClick={clickUpdate}
                   alt="plus-icon"

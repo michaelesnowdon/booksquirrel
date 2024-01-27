@@ -82,11 +82,14 @@
   &__icon-container {
     display: flex;
     width: 10rem;
-    margin-top: 2rem;
+    // height: 1rem;
+    padding-top: 1rem;
   }
 
-  &__plus-icon-container {
+  &__tick-icon-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
 
     :hover {
@@ -94,13 +97,14 @@
     }
   }
 
-  &__plus-icon {
-    color: $booksquirrel-orange;
+  &__tick-icon {
     width: 2rem;
   }
 
   &__delete-icon-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 
     :hover {
@@ -109,12 +113,13 @@
   }
 
   &__delete-icon {
-    color: $booksquirrel-orange;
     width: 2rem;
   }
 
   &__discussion-icon-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 
     :hover {
@@ -123,7 +128,6 @@
   }
 
   &__discussion-icon {
-    color: $booksquirrel-orange;
     width: 2rem;
   }
 }

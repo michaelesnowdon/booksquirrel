@@ -1,6 +1,6 @@
 import "./ReadListItem.scss";
 import ImageNotFound from "../../assets/images/image-not-found-icon.svg";
-import Discussion from "../../assets/icons/discussion.svg";
+import Discussion from "../../assets/icons/comment2.svg";
 import moment from "moment";
 import { Link } from "react-router-dom";
 

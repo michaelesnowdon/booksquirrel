@@ -89,7 +89,8 @@
     margin-bottom: 1rem;
 
     :hover {
-      border-color: $booksquirrel-orange;
+      background-color: $booksquirrel-orange;
+      color: $white;
     }
   }
 

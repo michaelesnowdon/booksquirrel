@@ -1,5 +1,7 @@
 import "./LoggedInHeader.scss";
 import logo from "../../assets/logos/booksquirrel-logo.png";
+import lineMenu from "../../assets/icons/line-menu.svg";
+import close from "../../assets/icons/close-24px.svg";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import { useState } from "react";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
@@ -8,12 +10,16 @@ import { Link } from "react-router-dom";
 const LoggedInHeader = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
-  const handleMouseEnter = () => {
-    setDropdownVisible(true);
-  };
+  // const handleMouseEnter = () => {
+  //   setDropdownVisible(true);
+  // };
 
-  const handleMouseLeave = () => {
-    setDropdownVisible(false);
+  // const handleMouseLeave = () => {
+  //   setDropdownVisible(false);
+  // };
+
+  const toggleDropdown = () => {
+    setDropdownVisible(!isDropdownVisible);
   };
 
   const { logout } = useKindeAuth();
@@ -26,17 +32,23 @@ const LoggedInHeader = () => {
             <div className="header-in__logo-container">
               <img
                 src={logo}
-                className="header-out__logo"
+                className="header-in__logo"
                 alt="booksquirrel-logo"
               ></img>
             </div>
           </Link>
           <div
             className="header-in__menu-container--dropdown"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            // onMouseEnter={handleMouseEnter}
+            // onMouseLeave={handleMouseLeave}
+            onClick={toggleDropdown}
           >
-            <button className="header-in__button--dropdown">Menu</button>
+            <button className="header-in__button--dropdown">
+              <img
+                className="header-in__menu-logo"
+                src={isDropdownVisible ? close : lineMenu}
+              ></img>
+            </button>
             {isDropdownVisible && <DropdownMenu />}
           </div>
           <div className="header-in__button-container--tablet">
