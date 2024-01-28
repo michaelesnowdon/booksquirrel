@@ -1,0 +1,67 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.comment-item {
+  @include tablet {
+    // margin-right: 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $mercury;
+    @include margin-layout;
+    @include padding-component;
+    @include tablet {
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include tablet {
+      width: 90%;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+  }
+
+  &__name {
+    @include sub-header;
+    color: $booksquirrel-black;
+  }
+
+  &__date {
+    @include body-copy;
+    color: silver;
+  }
+
+  &__comment {
+    @include body-copy;
+    color: $booksquirrel-black;
+  }
+
+  &__delete {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+
+    &-icon {
+      height: 100%;
+      fill: $mercury;
+    }
+
+    &-icon:hover {
+      fill: $booksquirrel-darkorange;
+    }
+  }
+}

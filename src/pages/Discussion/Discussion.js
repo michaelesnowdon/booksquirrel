@@ -1,6 +1,7 @@
 import "./Discussion.scss";
 import DiscussionBook from "../../components/DiscussionBook/DiscussionBook";
 import CommentForm from "../../components/CommentForm/CommentForm";
+import CommentList from "../../components/CommentList/CommentList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
@@ -44,6 +45,7 @@ const Discussion = () => {
       <div className="discussion">
         <DiscussionBook bookId={bookId} />
         <CommentForm bookId={bookId} fetchComments={fetchComments} />
+        <CommentList comments={comments} />
       </div>
     </>
   );
