@@ -7,6 +7,7 @@ import BookSearch from "./components/BookSearch/BookSearch";
 import Login from "./components/Login/Login";
 import ReadingList from "./pages/ReadingList/ReadingList";
 import ReadList from "./pages/ReadList/Readlist";
+import Discussion from "./pages/Discussion/Discussion";
 
 function App() {
   const { isAuthenticated } = useKindeAuth();
@@ -27,6 +28,10 @@ function App() {
           <Route
             path="/read-list"
             element={isAuthenticated ? <ReadList /> : <Login />}
+          ></Route>
+          <Route
+            path="/discussion/:bookId"
+            element={isAuthenticated ? <Discussion /> : <Login />}
           ></Route>
         </Routes>
       </BrowserRouter>

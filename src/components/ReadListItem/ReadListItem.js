@@ -27,11 +27,13 @@ const ReadListItem = ({ book }) => {
             ).fromNow()}`}</p>
             <div className="readlist-item__icon-container">
               <div className="readlist-item__discussion-icon-container">
-                <img
-                  className="readlist-item__discussion-icon"
-                  src={Discussion}
-                  alt="discussion-icon"
-                ></img>
+                <Link to={`/discussion/${book.book.isbn}`} key={book.book.isbn}>
+                  <img
+                    className="readlist-item__discussion-icon"
+                    src={Discussion}
+                    alt="discussion-icon"
+                  ></img>
+                </Link>
               </div>
             </div>
           </div>

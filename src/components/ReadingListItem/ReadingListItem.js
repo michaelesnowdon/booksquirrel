@@ -144,11 +144,13 @@ const ReadingListItem = ({ book, fetchReadingList }) => {
                 ></img>
               </div>
               <div className="readinglist-item__discussion-icon-container">
-                <img
-                  className="readinglist-item__discussion-icon"
-                  src={Discussion}
-                  alt="discussion-icon"
-                ></img>
+                <Link to={`/discussion/${book.book.isbn}`} key={book.book.isbn}>
+                  <img
+                    className="readinglist-item__discussion-icon"
+                    src={Discussion}
+                    alt="discussion-icon"
+                  ></img>
+                </Link>
               </div>
             </div>
           </div>
