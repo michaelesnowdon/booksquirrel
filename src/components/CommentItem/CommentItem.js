@@ -3,9 +3,12 @@ import moment from "moment";
 import Delete from "../../assets/icons/delete_outline-24px.svg";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import axios from "axios";
+import { useState } from "react";
+import DeleteCommentModal from "../DeleteCommentModal/DeleteCommentModal";
 
 const CommentItem = ({ comment, fetchComments }) => {
   const { user, getToken } = useKindeAuth();
+  const [isOpen, setIsOpen] = useState(false);
 
   const userId = user.id;
 
@@ -26,11 +29,34 @@ const CommentItem = ({ comment, fetchComments }) => {
     }
   };
 
+  const handleDeleteComment = async () => {
+    try {
+      await deleteComments();
+      setIsOpen(false);
+      // window.location.reload();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const clickDelete = () => {
+    setIsOpen(true);
+  };
+
+  const handleModalCancel = () => {
+    setIsOpen(false);
+  };
+
   const isCurrentUserCommentAuthor = userId === comment.commenter;
 
   return (
     <>
       <article className="comment-item__container">
+        <DeleteCommentModal
+          isOpen={isOpen}
+          handleModalCancel={handleModalCancel}
+          handleDeleteComment={handleDeleteComment}
+        />
         <div className="comment-item__card">
           <div className="comment-item__details">
             <p className="comment-item__name">{`${comment.user.firstName} ${comment.user.lastName}`}</p>
@@ -45,7 +71,7 @@ const CommentItem = ({ comment, fetchComments }) => {
               <img
                 className="comment-item__delete-icon"
                 src={Delete}
-                onClick={deleteComments}
+                onClick={clickDelete}
                 alt="delete-icon"
               ></img>
             </div>
