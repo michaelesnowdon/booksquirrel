@@ -3,17 +3,18 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/global" as *;
 
-.readinglist-item {
+.discussionbook {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  //   margin-top: 0.5rem;
+  //   margin-bottom: 0.5rem;
   // padding-top: 0.5rem;
   padding-bottom: 1rem;
   border-bottom: solid 2px $mercury;
   width: 100%;
+  //   @include margin-layout;
 
   &__title {
     // @include sub-header;
@@ -64,69 +65,5 @@
     text-align: center;
     // margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-  }
-
-  &__date {
-    @include body-copy;
-    text-align: center;
-    // margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  &__button {
-    width: 10rem;
-    background-color: $booksquirrel-orange;
-    border: none;
-  }
-
-  &__icon-container {
-    display: flex;
-    width: 10rem;
-    // height: 1rem;
-    padding-top: 1rem;
-  }
-
-  &__tick-icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-
-    :hover {
-      cursor: pointer;
-    }
-  }
-
-  &__tick-icon {
-    width: 2rem;
-  }
-
-  &__delete-icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
-    :hover {
-      cursor: pointer;
-    }
-  }
-
-  &__delete-icon {
-    width: 2rem;
-  }
-
-  &__discussion-icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    :hover {
-      cursor: pointer;
-    }
-  }
-
-  &__discussion-icon {
-    width: 2rem;
   }
 }
