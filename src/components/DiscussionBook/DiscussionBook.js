@@ -29,7 +29,7 @@ const DiscussionBook = ({ bookId }) => {
     fetchBook();
   }, []);
 
-  console.log(book);
+  //   console.log(book);
 
   return (
     <>

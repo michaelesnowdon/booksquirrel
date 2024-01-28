@@ -2,7 +2,7 @@ import "./ReadingListItem.scss";
 import ImageNotFound from "../../assets/images/image-not-found-icon.svg";
 import Tick from "../../assets/icons/tick.svg";
 import Delete from "../../assets/icons/delete_outline-24px.svg";
-import Discussion from "../../assets/icons/comment2.svg";
+import Discussion from "../../assets/icons/add_comment.svg";
 import moment from "moment";
 import { useState } from "react";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
