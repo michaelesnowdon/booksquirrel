@@ -33,7 +33,6 @@ const CommentItem = ({ comment, fetchComments }) => {
     try {
       await deleteComments();
       setIsOpen(false);
-      // window.location.reload();
     } catch (error) {
       console.error(error);
     }

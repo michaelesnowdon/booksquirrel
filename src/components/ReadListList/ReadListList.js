@@ -32,9 +32,7 @@ const ReadListList = () => {
     fetchReadList();
   }, []);
 
-  /* Function to count total books pages */
-
-  function calculateTotalPages(books) {
+  const calculateTotalPages = (books) => {
     const totalPages = books.reduce((total, book) => {
       if (typeof book.book.pageCount === "number") {
         return total + book.book.pageCount;
@@ -43,13 +41,11 @@ const ReadListList = () => {
     }, 0);
 
     return totalPages;
-  }
+  };
 
   const pageCount = calculateTotalPages(readList);
 
-  /* Function to count book categories */
-
-  function countUniqueCategories(books) {
+  const countUniqueCategories = (books) => {
     const uniqueCategories = new Set();
 
     books.forEach((book) => {
@@ -59,7 +55,7 @@ const ReadListList = () => {
     });
 
     return uniqueCategories.size;
-  }
+  };
 
   const categoriesCount = countUniqueCategories(readList);
 

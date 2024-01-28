@@ -29,8 +29,6 @@ const DiscussionBook = ({ bookId }) => {
     fetchBook();
   }, []);
 
-  //   console.log(book);
-
   return (
     <>
       <article className="discussionbook">

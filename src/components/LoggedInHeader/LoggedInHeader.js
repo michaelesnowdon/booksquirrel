@@ -10,14 +10,6 @@ import { Link } from "react-router-dom";
 const LoggedInHeader = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
-  // const handleMouseEnter = () => {
-  //   setDropdownVisible(true);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   setDropdownVisible(false);
-  // };
-
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
   };
@@ -39,8 +31,6 @@ const LoggedInHeader = () => {
           </Link>
           <div
             className="header-in__menu-container--dropdown"
-            // onMouseEnter={handleMouseEnter}
-            // onMouseLeave={handleMouseLeave}
             onClick={toggleDropdown}
           >
             <button className="header-in__button--dropdown">

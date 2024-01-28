@@ -20,11 +20,6 @@ const LoggedOutHeader = () => {
                 Sign In
               </button>
             </div>
-            {/* <div className="header-out__buttons">
-              <button className="header-out__button" onClick={register}>
-                Sign Up
-              </button>
-            </div> */}
           </div>
         </div>
       </header>

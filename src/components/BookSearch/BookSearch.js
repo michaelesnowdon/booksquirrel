@@ -2,7 +2,6 @@ import "./BookSearch.scss";
 import logo from "../../assets/logos/booksquirrel-logo.png";
 import searchIcon from "../../assets/icons/search.svg";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import BookResult from "../BookResult/BookResult";
 import { useState, useEffect } from "react";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
@@ -17,8 +16,6 @@ function BookSearch() {
   const [isInputEmpty, setIsInputEmpty] = useState(null);
 
   /* THIS IS TO REGISTER USER IN THE DATABASE */
-
-  //   console.log(user);
 
   const userId = user.id;
   const firstName = user.given_name;
@@ -68,24 +65,23 @@ function BookSearch() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior.
+    e.preventDefault();
 
     if (isFormValid()) {
       try {
-        const response = await fetchBookInfo(searchTerm, searchType); // Fetch book information from the API.
+        const response = await fetchBookInfo(searchTerm, searchType);
 
         if (response.items && response.items.length > 0) {
           const filteredBooks = response.items
-            .filter((item) => item.volumeInfo.industryIdentifiers) // Filter out items without industry identifiers.
+            .filter((item) => item.volumeInfo.industryIdentifiers)
             .filter(
               (item) =>
                 item.volumeInfo.authors &&
-                item.volumeInfo.authors.length === 1 && // Filter out items with multiple authors.
-                item.volumeInfo.imageLinks && // Check if imageLinks property exists.
-                item.volumeInfo.imageLinks.thumbnail // Check if thumbnail property exists.
+                item.volumeInfo.authors.length === 1 &&
+                item.volumeInfo.imageLinks &&
+                item.volumeInfo.imageLinks.thumbnail
             )
             .filter((item, index, self) => {
-              // Filter books with the same title (case insensitive) and unique titles.
               const title = item.volumeInfo.title.toLowerCase();
               return (
                 self.findIndex(
@@ -94,26 +90,26 @@ function BookSearch() {
                 ) === index
               );
             })
-            .map((item) => item.volumeInfo) // Extract the volumeInfo property for each item.
+            .map((item) => item.volumeInfo)
             .filter((book) =>
               book.industryIdentifiers.some(
-                (identifier) => identifier.type === "ISBN_13" // Filter books with ISBN-13 identifier.
+                (identifier) => identifier.type === "ISBN_13"
               )
             );
 
-          setBookList(filteredBooks); // Set the filtered books as the book list.
-          setSearchTerm(" "); // Reset the search term.
-          setError(null); // Clear any previous error message.
+          setBookList(filteredBooks);
+          setSearchTerm(" ");
+          setError(null);
           setInputClass("booksearch__search-bar");
         } else {
-          setBookList([]); // Set an empty book list.
-          setSearchTerm(" "); // Reset the search term.
-          setError("No books found with the given search criteria."); // Set an error message.
+          setBookList([]);
+          setSearchTerm(" ");
+          setError("No books found with the given search criteria.");
         }
       } catch (error) {
-        setBookList([]); // Set an empty book list in case of an error.
-        setError("An error occurred while fetching data."); // Set an error message.
-        console.error("Error:", error); // Log the error to the console.
+        setBookList([]);
+        setError("An error occurred while fetching data.");
+        console.error("Error:", error);
       }
     } else {
       setIsInputEmpty(true);

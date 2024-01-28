@@ -12,11 +12,9 @@ function BookResult({ book }) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Extract book details to variables
   const { title, authors, categories, description, imageLinks, pageCount } =
     book;
 
-  // Extract ISBN-13 if available
   const isbn13 =
     book.industryIdentifiers &&
     book.industryIdentifiers.find(
@@ -63,7 +61,6 @@ function BookResult({ book }) {
     try {
       await AddABookToReadList();
       setIsOpen(false);
-      // window.location.reload();
       navigate("/reading-list");
     } catch (error) {
       console.error(error);

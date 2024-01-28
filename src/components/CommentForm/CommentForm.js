@@ -1,5 +1,4 @@
 import "./CommentForm.scss";
-import buttonIcon from "../../assets/icons/add_comment.svg";
 import axios from "axios";
 import { useState } from "react";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
