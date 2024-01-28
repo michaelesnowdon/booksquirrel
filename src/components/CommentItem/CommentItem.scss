@@ -50,18 +50,18 @@
     color: $booksquirrel-black;
   }
 
-  &__delete {
+  &__delete-icon-container {
     display: flex;
     justify-content: flex-end;
-    height: 100%;
+    align-items: center;
+    width: 100%;
 
-    &-icon {
-      height: 100%;
-      fill: $mercury;
+    :hover {
+      cursor: pointer;
     }
+  }
 
-    &-icon:hover {
-      fill: $booksquirrel-darkorange;
-    }
+  &__delete-icon {
+    width: 1.2rem;
   }
 }

@@ -70,7 +70,7 @@ const CommentForm = ({ bookId, fetchComments }) => {
         <form onSubmit={handleSumbit} className="commentform__container">
           <div className="commentform__input">
             <label htmlFor="textarea" className="commentform__header">
-              JOIN THE CONVERSATION
+              JOIN THE DISCUSSION
             </label>
             <textarea
               className={inputClass}

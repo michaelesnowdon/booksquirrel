@@ -45,7 +45,7 @@ const Discussion = () => {
       <div className="discussion">
         <DiscussionBook bookId={bookId} />
         <CommentForm bookId={bookId} fetchComments={fetchComments} />
-        <CommentList comments={comments} />
+        <CommentList comments={comments} fetchComments={fetchComments} />
       </div>
     </>
   );
