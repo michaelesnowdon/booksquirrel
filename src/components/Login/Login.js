@@ -11,13 +11,12 @@ const Login = () => {
           <img src={logo} className="login__logo"></img>
         </div>
         <h1 className="login__slogan">
-          <span>Nuts</span> about books? We're <span>nuts</span> about
-          books...for book <span>nuts</span>!
+          Are you <span>nuts</span> about books? So are we!
         </h1>
 
         <h4 className="login__text">
           Start creating your digital library today with the ultimate book
-          organization app
+          organization app.
         </h4>
         <div className="login__button-container">
           <button className="login__button" onClick={register}>
