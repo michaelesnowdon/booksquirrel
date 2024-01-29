@@ -16,7 +16,7 @@ const CommentItem = ({ comment, fetchComments }) => {
     try {
       const accessToken = await getToken();
       const response = await axios.delete(
-        `http://localhost:8080/api/comments/${userId}/comment/${comment.commentId}/delete`,
+        `${process.env.REACT_APP_API_URL}/api/comments/${userId}/comment/${comment.commentId}/delete`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

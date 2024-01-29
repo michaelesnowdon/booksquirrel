@@ -35,7 +35,7 @@ function BookResult({ book }) {
     try {
       const accessToken = await getToken();
       const response = await axios.post(
-        `http://localhost:8080/api/books`,
+        `${process.env.REACT_APP_API_URL}/api/books`,
         {
           userId: userId,
           bookId: postIsbn,

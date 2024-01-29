@@ -15,7 +15,7 @@ const ReadListList = () => {
     try {
       const accessToken = await getToken();
       const response = await axios.get(
-        `http://localhost:8080/api/books/${userId}/read`,
+        `${process.env.REACT_APP_API_URL}/api/books/${userId}/read`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

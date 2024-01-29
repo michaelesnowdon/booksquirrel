@@ -12,7 +12,7 @@ const DiscussionBook = ({ bookId }) => {
     try {
       const accessToken = await getToken();
       const response = await axios.get(
-        `http://localhost:8080/api/books/${bookId}`,
+        `${process.env.REACT_APP_API_URL}/api/books/${bookId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

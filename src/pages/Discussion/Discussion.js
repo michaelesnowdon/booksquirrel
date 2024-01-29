@@ -21,7 +21,7 @@ const Discussion = () => {
     try {
       const accessToken = await getToken();
       const response = await axios.get(
-        `http://localhost:8080/api/comments/${bookId}/comments`,
+        `${process.env.REACT_APP_API_URL}/api/comments/${bookId}/comments`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

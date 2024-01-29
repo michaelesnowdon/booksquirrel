@@ -25,7 +25,7 @@ const ReadingListItem = ({ book, fetchReadingList }) => {
     try {
       const accessToken = await getToken();
       const response = await axios.delete(
-        `http://localhost:8080/api/books/${userId}/delete/${bookId}`,
+        `${process.env.REACT_APP_API_URL}/api/books/${userId}/delete/${bookId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -62,7 +62,7 @@ const ReadingListItem = ({ book, fetchReadingList }) => {
     try {
       const accessToken = await getToken();
       const response = await axios.put(
-        `http://localhost:8080/api/books/${userId}/update/${bookId}`,
+        `${process.env.REACT_APP_API_URL}/api/books/${userId}/update/${bookId}`,
         { isRead: true },
         {
           headers: {
