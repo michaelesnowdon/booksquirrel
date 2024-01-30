@@ -1,6 +1,8 @@
 import "./About.scss";
 import aboutLogo from "../../assets/images/about-logos.png";
 import meImage from "../../assets/images/IMG_3061.jpg";
+import linkedin from "../../assets/logos/LI-In-Bug.png";
+import github from "../../assets/logos/github-mark.png";
 
 const About = () => {
   return (
@@ -23,9 +25,15 @@ const About = () => {
           </div>
           <div className="about__bottom">
             <div className="about__bottom-image-container">
-              <h4>bookSquirrel was created by Michael Snowdon</h4>
+              <h3 className="about__bottom-name">
+                bookSquirrel was created by Michael Snowdon
+              </h3>
               <div className="about__bottom-image">
                 <img src={meImage} className="about__bottom-image-me"></img>
+              </div>
+              <div className="about__bottom-logos-container">
+                <img src={linkedin} className="about__bottom-logo"></img>
+                <img src={github} className="about__bottom-logo"></img>
               </div>
             </div>
           </div>

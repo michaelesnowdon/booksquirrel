@@ -63,12 +63,29 @@
       align-items: center;
       text-align: center;
       width: 80%;
+      margin-top: 1rem;
     }
 
     &-image-me {
       display: flex;
       height: 20rem;
       justify-content: center;
+    }
+
+    &-name {
+      margin-bottom: 1rem;
+    }
+
+    &-logos-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 10rem;
+      margin-top: 2rem;
+    }
+
+    &-logo {
+      height: 2rem;
     }
   }
 }
