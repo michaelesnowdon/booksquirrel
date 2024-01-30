@@ -1,0 +1,74 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.about {
+  @include margin-layout;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // width: 90%;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    &-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+    }
+
+    &-logos {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &__logos {
+    display: flex;
+    height: 30rem;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    &-image-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 80%;
+    }
+
+    &-image-me {
+      display: flex;
+      height: 20rem;
+      justify-content: center;
+    }
+  }
+}

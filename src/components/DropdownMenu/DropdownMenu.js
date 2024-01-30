@@ -11,17 +11,17 @@ const DropdownMenu = () => {
         <Link to="/" className="dropdownmenu__list-link">
           <p className="dropdownmenu__list-item">Search</p>
         </Link>
-        <Link to="reading-list" className="dropdownmenu__list-link">
+        <Link to="/reading-list" className="dropdownmenu__list-link">
           <p li className="dropdownmenu__list-item">
             Reading List
           </p>
         </Link>
-        <Link to="read-list" className="dropdownmenu__list-link">
+        <Link to="/read-list" className="dropdownmenu__list-link">
           <p li className="dropdownmenu__list-item">
             Read List
           </p>
         </Link>
-        <Link to="" className="dropdownmenu__list-link">
+        <Link to="/about" className="dropdownmenu__list-link">
           <p li className="dropdownmenu__list-item">
             About
           </p>

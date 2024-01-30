@@ -57,9 +57,11 @@ const LoggedInHeader = () => {
                 <button className="header-in__button">Read List</button>
               </div>
             </Link>
-            <div className="header-in__buttons">
-              <button className="header-in__button">About</button>
-            </div>
+            <Link to="/about">
+              <div className="header-in__buttons">
+                <button className="header-in__button">About</button>
+              </div>
+            </Link>
             <div className="header-in__buttons">
               <button className="header-in__button" onClick={logout}>
                 Logout
