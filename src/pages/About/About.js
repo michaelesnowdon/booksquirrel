@@ -21,7 +21,11 @@ const About = () => {
               </h4>
             </div>
             <div className="about__top-logos">
-              <img src={aboutLogo} className="about__logos"></img>
+              <img
+                src={aboutLogo}
+                className="about__logos"
+                alt="build tools "
+              ></img>
             </div>
           </div>
           <div className="about__bottom">
@@ -30,17 +34,29 @@ const About = () => {
                 bookSquirrel was created by Michael Snowdon
               </h3>
               <div className="about__bottom-image">
-                <img src={meImage} className="about__bottom-image-me"></img>
+                <img
+                  src={meImage}
+                  className="about__bottom-image-me"
+                  alt="profile"
+                ></img>
               </div>
               <div className="about__bottom-logos-container">
                 <a
                   href="https://www.linkedin.com/in/michaelesnowdon/"
                   target="_blank"
                 >
-                  <img src={linkedin} className="about__bottom-logo"></img>
+                  <img
+                    src={linkedin}
+                    className="about__bottom-logo"
+                    alt="linkedin"
+                  ></img>
                 </a>
                 <a href="https://github.com/michaelesnowdon/" target="_blank">
-                  <img src={github} className="about__bottom-logo"></img>
+                  <img
+                    src={github}
+                    className="about__bottom-logo"
+                    alt="github"
+                  ></img>
                 </a>
               </div>
             </div>

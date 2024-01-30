@@ -85,6 +85,11 @@
     align-items: flex-end;
     width: 100%;
     margin-top: 1rem;
+
+    :hover {
+      background-color: $booksquirrel-darkorange;
+      color: $white;
+    }
   }
 
   &__button {
@@ -97,5 +102,9 @@
     @include page-header;
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  &__error {
+    text-align: center;
   }
 }

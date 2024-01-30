@@ -51,6 +51,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
+    color: $booksquirrel-black;
 
     :hover {
       background-color: $booksquirrel-darkorange;
@@ -62,5 +63,6 @@
     text-align: center;
     background-color: $booksquirrel-orange;
     border: none;
+    color: $booksquirrel-black;
   }
 }

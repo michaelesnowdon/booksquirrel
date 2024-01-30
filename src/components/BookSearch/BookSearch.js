@@ -139,7 +139,7 @@ function BookSearch() {
     <section className="booksearch">
       <div className="booksearch__container">
         <div className="booksearch__logo-container">
-          <img src={logo} className="booksearch__logo"></img>
+          <img src={logo} className="booksearch__logo" alt="search"></img>
         </div>
         <form onSubmit={handleSubmit} className="booksearch__form-container">
           <label className="booksearch__label">
@@ -175,7 +175,7 @@ function BookSearch() {
           </div>
         </form>
       </div>
-      {error && <p>{error}</p>}
+      {error && <p className="booksearch__error">{error}</p>}
       {bookList.length > 0 && (
         <div>
           <h2 className="booksearch__results"> Results:</h2>
