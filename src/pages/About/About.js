@@ -3,6 +3,7 @@ import aboutLogo from "../../assets/images/about-logos.png";
 import meImage from "../../assets/images/IMG_3061.jpg";
 import linkedin from "../../assets/logos/LI-In-Bug.png";
 import github from "../../assets/logos/github-mark.png";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -32,8 +33,15 @@ const About = () => {
                 <img src={meImage} className="about__bottom-image-me"></img>
               </div>
               <div className="about__bottom-logos-container">
-                <img src={linkedin} className="about__bottom-logo"></img>
-                <img src={github} className="about__bottom-logo"></img>
+                <a
+                  href="https://www.linkedin.com/in/michaelesnowdon/"
+                  target="_blank"
+                >
+                  <img src={linkedin} className="about__bottom-logo"></img>
+                </a>
+                <a href="https://github.com/michaelesnowdon/" target="_blank">
+                  <img src={github} className="about__bottom-logo"></img>
+                </a>
               </div>
             </div>
           </div>

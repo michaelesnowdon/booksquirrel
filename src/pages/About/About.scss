@@ -6,6 +6,7 @@
 .about {
   @include margin-layout;
   width: 100%;
+  margin-top: 3rem;
 
   &__container {
     display: flex;

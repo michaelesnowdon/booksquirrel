@@ -5,6 +5,7 @@
 
 .booksearch {
   @include margin-layout;
+  margin-top: 3rem;
 
   @include desktop {
     width: 80%;
