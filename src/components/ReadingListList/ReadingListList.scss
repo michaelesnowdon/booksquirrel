@@ -11,6 +11,11 @@
   align-items: center;
   margin-top: 3rem;
 
+  @include desktop {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   &__header {
     @include page-header;
     text-align: center;

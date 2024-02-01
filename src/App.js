@@ -9,6 +9,7 @@ import ReadingList from "./pages/ReadingList/ReadingList";
 import ReadList from "./pages/ReadList/Readlist";
 import Discussion from "./pages/Discussion/Discussion";
 import About from "./pages/About/About";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 function App() {
   const { isAuthenticated } = useKindeAuth();
@@ -37,6 +38,10 @@ function App() {
           <Route
             path="/about"
             element={isAuthenticated ? <About /> : <Login />}
+          ></Route>
+          <Route
+            path="*"
+            element={isAuthenticated ? <PageNotFound /> : <Login />}
           ></Route>
         </Routes>
       </BrowserRouter>

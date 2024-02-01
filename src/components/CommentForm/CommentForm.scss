@@ -21,6 +21,7 @@
     }
 
     @include desktop {
+      width: 50%;
     }
   }
 
@@ -49,6 +50,7 @@
     background-color: $alabaster;
     resize: none;
     overflow: hidden;
+    outline: none;
 
     &--invalid {
       border-color: red;

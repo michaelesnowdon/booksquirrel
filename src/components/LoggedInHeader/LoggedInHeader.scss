@@ -7,6 +7,11 @@
   width: 100%;
   height: 12vh;
 
+  @include desktop {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
