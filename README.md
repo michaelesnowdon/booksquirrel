@@ -27,7 +27,29 @@ In today's fast-paced digital age, individuals are constantly seeking efficient 
 - As a user, I want to be able to create an account to manage reading list
 - As a user, I want to be able to login to my account to manage my reading list
 
-## Implementation
+### Development Environment Installation Instructions
+
+First run in the terminal for bookSquirrel and [book-Squirrel-backend][https://github.com/michaelesnowdon/booksquirrel-backend] to download the node modules:
+
+```
+npm init -y
+```
+
+For BrainStation, please then add the .env files that I have provided in a separate file.
+
+In bookSquirrel, run to start the client:
+
+```
+npm start
+```
+
+And in bookSquirrel-backend, run to start the server:
+
+```
+node index.js
+```
+
+Note: both Google Books API and Kinde Auth have been configured to run on Localhost:3000 and https://booksquirrel.netlify.app/
 
 ### Tech Stack
 
@@ -59,7 +81,7 @@ Google Books API
 - Book Discussion
 - About
 
-### Mockups
+### Page Screenshots
 
 #### Login Page
 
@@ -69,9 +91,25 @@ Google Books API
 
 ![](home-search-page.png)
 
+#### Book Searches
+
+![](book-searches.png)
+
+#### Add Book To Reading List Modal
+
+![](add-book-to-reading-list-modal.png)
+
 #### Reading List Page
 
 ![](reading-list.png)
+
+#### Mark Book As Read Modal
+
+![](mark-book-as-read-modal.png)
+
+#### Delete Book From Reading List Modal
+
+![](delete-book-from-reading-list-modal.png)
 
 #### Read List Page
 
@@ -81,9 +119,9 @@ Google Books API
 
 ![](book-discussion.png)
 
-#### Delete Modal
+#### Delete Comment Modal
 
-![](delete-modal.png)
+![](delete-comment-modal.png)
 
 ### Data
 
@@ -138,6 +176,7 @@ Response:
 
 - Get all unread books for a user
 
+```
 [
 {
 "id": "clrkiy8f5000ailvyl04a8xrq",
@@ -174,11 +213,13 @@ Response:
 }
 }
 ]
+```
 
 \*\*GET /books/:userId/read
 
 - Get all read books for a user
 
+```
 [
 {
 "id": "clrhy0ybg0001tx5zme2wspom",
@@ -198,6 +239,7 @@ Response:
 }
 }
 ]
+```
 
 \*\*POST /books
 
@@ -205,6 +247,7 @@ Response:
 
 Body:
 
+```
 {
 "userId": "unique_user_id_2",
 "bookId": "9780123456789",
@@ -215,9 +258,11 @@ Body:
 "thumbnail": "https://example.com/book-thumbnail.jpg",
 "pageCount": 300
 }
+```
 
 Response:
 
+```
 {
 "id": "clrp5wf0r0002qs36m5yd25ly",
 "userId": "unique_user_id_10",
@@ -225,11 +270,13 @@ Response:
 "isRead": false,
 "addedDate": "2024-01-22T16:48:54.020Z"
 }
+```
 
 \*\*PUT /books/:userId/update/:bookId
 
 - Update a book to isRead for a user
 
+```
 {
 "id": "clrp5wf0r0002qs36m5yd25ly",
 "userId": "unique_user_id_10",
@@ -237,6 +284,7 @@ Response:
 "isRead": true,
 "addedDate": "2024-01-22T16:48:54.020Z"
 }
+```
 
 \*\*DELETE /books/:userId/delete/:bookId
 
@@ -248,6 +296,7 @@ No response
 
 - Get all comments for a book
 
+```
 [
 {
 "commentId": "clrkjhjs90003v63634m6xrvd",
@@ -278,6 +327,7 @@ No response
 }
 }
 ]
+```
 
 \*\*POST /comments/:userId/comment/:bookId
 
@@ -285,12 +335,15 @@ No response
 
 Body:
 
+```
 {
 "comment": "This book is a great book! I loved it."
 }
+```
 
 Response:
 
+```
 {
 "commentId": "clrp691bk00016k5amb1nu0l5",
 "commenter": "unique_user_id_3",
@@ -298,6 +351,7 @@ Response:
 "commentedBook": "123456789",
 "createdAt": "2024-01-22T16:58:42.798Z"
 }
+```
 
 \*\*DELETE /comments/:userId/comment/:commentId/delete
 
@@ -305,66 +359,7 @@ Response:
 
 No response
 
-### Auth
+## Lessons Learned & Next Steps
 
-- Using KindeAuth's authentication functionality
-
-## Roadmap
-
-- Create client
-
-  - react project with routes and boilerplate pages
-
-- Create server
-
-  - express project with routing, with placeholder 200 responses
-
-- Create migrations
-
-- Deploy client and server projects so all commits will be reflected in production
-
-- Feature: Book search page
-
-  - Implement book search using Google Books API
-  - Create POST /book
-
-- Feature: Reading list page
-
-  - Implement reading list
-  - Create GET /books/:userId/unread
-  - Create PUT /books/:userId/update/:bookId
-  - Create DELETE /books/:userId/delete/:bookId
-
-- Feature: Read list page
-
-  - Implement read list page
-  - Create GET /books/:userId/read
-
-- Feature: Discussion Page
-
-  - Implement book discussion page
-  - Create GET /comments/:bookId/comments
-  - Create POST /comments/:userId/comment/:bookId
-  - CREATE DELETE /comments/:userId/comment/:commentId/delete
-
-- Feature: About Page
-
-  - Implement about page
-
-- Feature: Login
-
-  - Implement login page
-
-- Feature: Implement JWT tokens via KindeAuth
-
-  - Server: Update expected requests / responses on protected endpoints
-  - Client: Store JWT in local storage, include JWT on axios calls
-
-- Bug fixes
-
-- DEMO DAY
-
-## Nice-to-haves
-
-- Viewing other peoples lists
-- Giving the comments more of a social media feel (i.e. liking, rating etc)
+- Working with external APIs is a challenge when the documentation is not very clear. In the future I would definitely give which API to work with (if any) much more thought.
+- I would like to add more "user-to-user" features to this project in the future. Perhaps allow users to give recommendations to each other and see other user's book lists.

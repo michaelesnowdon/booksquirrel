@@ -66,9 +66,12 @@ const ReadListList = () => {
           readList.length
         } ${readList.length === 1 ? "book" : "books"}!`}</h2>{" "}
         <h2 className="readlist__subheader">
-          {`That is ${pageCount} pages and ${categoriesCount} unique book ${
-            categoriesCount === 1 ? "category" : "categories"
-          }.`}
+          {`That is `}
+          <span>{pageCount}</span>
+          {` pages and `}
+          <span>{categoriesCount}</span>
+          {` unique book `}
+          {categoriesCount === 1 ? "category" : "categories"}.
         </h2>
         {readList.length > 0 ? (
           readList

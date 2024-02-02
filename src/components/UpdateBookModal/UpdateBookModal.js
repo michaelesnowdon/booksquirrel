@@ -24,7 +24,7 @@ const UpdateBookModal = ({
               <div className="modal__description-container">
                 <p className="modal__description">
                   {`
-                  Please confirm that you would like to mark this book as read`}
+                  Please confirm that you would like to mark this book as read? This action cannot be undone.`}
                 </p>
               </div>
             </div>
