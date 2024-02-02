@@ -19,8 +19,6 @@ const ReadingListItem = ({ book, fetchReadingList }) => {
   const userId = user.id;
   const bookId = book.book.isbn;
 
-  /* Delete a book for a user */
-
   const deleteBook = async () => {
     try {
       const accessToken = await getToken();
@@ -55,8 +53,6 @@ const ReadingListItem = ({ book, fetchReadingList }) => {
   const handleModalCancelDelete = () => {
     setIsDeleteOpen(false);
   };
-
-  /* Update a book for a user */
 
   const updateBook = async () => {
     try {

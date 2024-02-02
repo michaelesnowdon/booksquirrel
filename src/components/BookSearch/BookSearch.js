@@ -15,8 +15,6 @@ function BookSearch() {
   const [inputClass, setInputClass] = useState("booksearch__search-bar");
   const [isInputEmpty, setIsInputEmpty] = useState(null);
 
-  /* THIS IS TO REGISTER USER IN THE DATABASE */
-
   const userId = user.id;
   const firstName = user.given_name;
   const lastName = user.family_name;
@@ -45,8 +43,6 @@ function BookSearch() {
   useEffect(() => {
     registerUser();
   }, []);
-
-  /* THIS IS THE GOOGLE BOOKS API SEARCH FUNCTIONALITY */
 
   const handleNewSearch = (e) => {
     setSearchTerm(e.target.value);

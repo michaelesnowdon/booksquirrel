@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  //   width: 100%;
 
   @include desktop {
     width: 80%;
@@ -20,12 +19,7 @@
     justify-content: center;
   }
 
-  //   &__logo {
-  //     // width: 18rem;
-  //   }
-
   &__slogan {
-    // @include sub-header;
     text-align: center;
     margin-top: 2rem;
     font-weight: 700;

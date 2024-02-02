@@ -4,10 +4,6 @@
 @use "../../styles/partials/global" as *;
 
 .comment-item {
-  @include tablet {
-    // margin-right: 0;
-  }
-
   &__container {
     display: flex;
     flex-direction: row;

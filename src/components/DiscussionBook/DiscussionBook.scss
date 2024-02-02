@@ -8,16 +8,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  //   margin-top: 0.5rem;
-  //   margin-bottom: 0.5rem;
-  // padding-top: 0.5rem;
   padding-bottom: 1rem;
   border-bottom: solid 2px $mercury;
   width: 100%;
-  //   @include margin-layout;
 
   &__title {
-    // @include sub-header;
     @include padding-component;
     text-align: center;
   }
@@ -45,12 +40,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // width: 80%;
     @include margin-layout;
-
-    @include tablet {
-      // width: 80%;
-    }
   }
 
   &__author {
@@ -63,7 +53,6 @@
   &__category {
     @include body-copy;
     text-align: center;
-    // margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
 }

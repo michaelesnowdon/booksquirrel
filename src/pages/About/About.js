@@ -3,7 +3,6 @@ import aboutLogo from "../../assets/images/about-logos.png";
 import meImage from "../../assets/images/IMG_3061.jpg";
 import linkedin from "../../assets/logos/LI-In-Bug.png";
 import github from "../../assets/logos/github-mark.png";
-import { Link } from "react-router-dom";
 
 const About = () => {
   return (

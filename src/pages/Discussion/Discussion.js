@@ -15,8 +15,6 @@ const Discussion = () => {
 
   const userId = user.id;
 
-  //   console.log(bookId);
-
   const fetchComments = async () => {
     try {
       const accessToken = await getToken();
@@ -37,8 +35,6 @@ const Discussion = () => {
   useEffect(() => {
     fetchComments();
   }, []);
-
-  console.log(comments);
 
   return (
     <>

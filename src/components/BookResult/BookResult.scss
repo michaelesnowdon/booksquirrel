@@ -14,10 +14,6 @@
   padding-bottom: 0.5rem;
   border-bottom: solid 2px $mercury;
 
-  // @include desktop {
-  //   width: 70%;
-  // }
-
   &__title {
     @include page-header;
     @include padding-component;
@@ -33,10 +29,6 @@
     @include tablet {
       flex-direction: row;
     }
-
-    // @include desktop {
-    //   width: 70%;
-    // }
   }
 
   &__details-container {
@@ -44,7 +36,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // width: 80%;
     @include margin-layout;
 
     @include tablet {
