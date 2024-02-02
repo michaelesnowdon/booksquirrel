@@ -32,7 +32,7 @@ In today's fast-paced digital age, individuals are constantly seeking efficient 
 First run in the terminal for bookSquirrel and [book-Squirrel-backend][https://github.com/michaelesnowdon/booksquirrel-backend] to download the node modules:
 
 ```
-npm init -y
+npm install
 ```
 
 For BrainStation, please then add the .env files that I have provided in a separate file.
